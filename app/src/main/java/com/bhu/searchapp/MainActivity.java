@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
                 TextView t = findViewById(R.id.textView);
                 t.setText("Selected place: "+place.getName());
 
-                //Reset button and card's visibility when a place is selected
+                //Reset button and search frag's visibility when a place is selected
                 Button b = findViewById(R.id.button);
                 b.setVisibility(View.VISIBLE);
-                View v = findViewById(R.id.searchCard);
+                View v = findViewById(R.id.autocomplete_fragment);
                 v.setVisibility(View.GONE);
             }
 
@@ -63,15 +63,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Set search card to be invisible
-        View v = findViewById(R.id.searchCard);
+        //Set search fragment to be invisible
+        View v = findViewById(R.id.autocomplete_fragment);
         v.setVisibility(View.GONE);
     }
 
     public void onSearchClick(View view){
+        //Switch visibility
         Button b = findViewById(R.id.button);
         b.setVisibility(View.GONE);
-        View v = findViewById(R.id.searchCard);
+
+        View v = findViewById(R.id.autocomplete_fragment);
         v.setVisibility(View.VISIBLE);
+
+
     }
 }
